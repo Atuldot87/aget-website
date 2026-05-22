@@ -1,0 +1,56 @@
+/* ====== AGET Custom Styles ====== */
+
+/* Hero background */
+.hero-bg {
+    background: linear-gradient(135deg, #081832 0%, #1a3a6e 60%, #122d5e 100%);
+}
+
+.hero-pattern {
+    background-image: 
+        radial-gradient(circle at 20% 50%, rgba(212,160,23,0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(26,58,110,0.4) 0%, transparent 40%),
+        url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d4a017' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in  { animation: fadeIn  0.8s ease forwards; }
+.animate-slide-up { animation: slideUp 0.8s ease forwards; }
+.delay-200 { animation-delay: 0.2s; opacity: 0; }
+.delay-300 { animation-delay: 0.3s; opacity: 0; }
+
+/* Nav active link */
+.nav-link.active { color: #d4a017; border-bottom: 2px solid #d4a017; }
+
+/* Print styles for receipt */
+@media print {
+    nav, footer, #donationForm, .no-print { display: none !important; }
+    #receiptContent { box-shadow: none !important; max-width: 100% !important; }
+    #receiptModal { position: static !important; background: none !important; }
+}
+
+/* Smooth scroll */
+html { scroll-behavior: smooth; }
+
+/* Focus outlines for accessibility */
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+    outline: 2px solid #d4a017;
+    outline-offset: 2px;
+}
+
+/* Gold text */
+.text-gold-400 { color: #f0c94d; }
+.text-gold-500 { color: #d4a017; }
+.text-gold-600 { color: #b8860b; }
+
+/* Hover scale for cards */
+article.group:hover { transform: translateY(-4px); }
+article { transition: transform 0.2s ease, box-shadow 0.2s ease; }

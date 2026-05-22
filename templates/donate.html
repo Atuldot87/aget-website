@@ -1,0 +1,253 @@
+{% extends "base.html" %}
+
+{% block title %}Donate to AGET | Support Education in Bihar | Asharfi Global Educational Trust{% endblock %}
+{% block meta_desc %}Donate to Asharfi Global Educational Trust and support quality education for underprivileged children in Bihar. Donations eligible for 80G tax exemption. Instant receipt generated.{% endblock %}
+{% block meta_keywords %}donate AGET, donation Bihar education trust, 80G donation Bihar, support education India, Asharfi Global Educational Trust donation{% endblock %}
+
+{% block content %}
+
+<!-- Hero -->
+<section class="bg-navy-900 py-20 relative overflow-hidden">
+    <div class="absolute inset-0 hero-pattern opacity-10"></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-4 text-center">
+        <p class="text-gold-400 font-semibold text-sm tracking-widest uppercase mb-3">Make a Difference</p>
+        <h1 class="font-serif text-4xl lg:text-5xl font-bold text-white mb-4">Donate to AGET</h1>
+        <p class="text-gray-300 max-w-2xl mx-auto text-lg">Your generosity changes real lives. Every contribution, big or small, opens doors of education for children who have none.</p>
+        <p class="text-gold-400 mt-3 font-semibold">🏛️ Donations eligible for 80G tax exemption under Income Tax Act</p>
+    </div>
+</section>
+
+<!-- Donation Impact -->
+<section class="py-12 bg-gold-50 border-y border-gold-200">
+    <div class="max-w-5xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+        <div>
+            <div class="font-serif text-2xl font-bold text-navy-800">₹500</div>
+            <p class="text-gray-600 text-sm mt-1">Buys a month of textbooks</p>
+        </div>
+        <div>
+            <div class="font-serif text-2xl font-bold text-navy-800">₹2,000</div>
+            <p class="text-gray-600 text-sm mt-1">Sponsors a semester</p>
+        </div>
+        <div>
+            <div class="font-serif text-2xl font-bold text-navy-800">₹5,000</div>
+            <p class="text-gray-600 text-sm mt-1">Funds vocational training</p>
+        </div>
+        <div>
+            <div class="font-serif text-2xl font-bold text-navy-800">₹10,000</div>
+            <p class="text-gray-600 text-sm mt-1">Full year scholarship</p>
+        </div>
+    </div>
+</section>
+
+<!-- Donation Form -->
+<section class="py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-4 grid lg:grid-cols-2 gap-14">
+
+        <!-- Form -->
+        <div>
+            <h2 class="font-serif text-2xl font-bold text-navy-800 mb-8">Complete Your Donation</h2>
+
+            <div id="donationForm" class="space-y-5">
+                <!-- Amount Selection -->
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-3">Select Amount (₹)</label>
+                    <div class="grid grid-cols-3 gap-3 mb-3" id="amountBtns">
+                        <button type="button" onclick="setAmount(500)" class="amount-btn border-2 border-navy-200 text-navy-700 font-bold py-3 rounded-xl hover:border-gold-500 hover:bg-gold-50 transition-all">₹500</button>
+                        <button type="button" onclick="setAmount(1000)" class="amount-btn border-2 border-navy-200 text-navy-700 font-bold py-3 rounded-xl hover:border-gold-500 hover:bg-gold-50 transition-all">₹1,000</button>
+                        <button type="button" onclick="setAmount(2000)" class="amount-btn border-2 border-navy-200 text-navy-700 font-bold py-3 rounded-xl hover:border-gold-500 hover:bg-gold-50 transition-all">₹2,000</button>
+                        <button type="button" onclick="setAmount(5000)" class="amount-btn border-2 border-navy-200 text-navy-700 font-bold py-3 rounded-xl hover:border-gold-500 hover:bg-gold-50 transition-all">₹5,000</button>
+                        <button type="button" onclick="setAmount(10000)" class="amount-btn border-2 border-navy-200 text-navy-700 font-bold py-3 rounded-xl hover:border-gold-500 hover:bg-gold-50 transition-all">₹10,000</button>
+                        <button type="button" onclick="setAmount(0)" class="amount-btn border-2 border-navy-200 text-navy-700 font-bold py-3 rounded-xl hover:border-gold-500 hover:bg-gold-50 transition-all">Custom</button>
+                    </div>
+                    <input type="number" id="customAmount" placeholder="Enter custom amount in ₹" class="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:border-gold-500 focus:ring-2 focus:ring-gold-200 transition-all" min="100">
+                </div>
+
+                <!-- Purpose -->
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-2">Donation Purpose</label>
+                    <select id="purpose" class="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:border-gold-500 focus:ring-2 focus:ring-gold-200 transition-all">
+                        <option value="General Donation">General Donation</option>
+                        <option value="Scholarship Fund">Scholarship Fund</option>
+                        <option value="School Infrastructure">School Infrastructure</option>
+                        <option value="Vocational Training">Vocational Training</option>
+                        <option value="Women & Widow Welfare">Women & Widow Welfare</option>
+                        <option value="Special Needs Education">Special Needs Education</option>
+                        <option value="Sports & Arts Development">Sports & Arts Development</option>
+                    </select>
+                </div>
+
+                <!-- Personal Details -->
+                <div class="grid sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">Full Name *</label>
+                        <input type="text" id="donorName" placeholder="Your full name" class="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:border-gold-500 focus:ring-2 focus:ring-gold-200 transition-all">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">Phone Number *</label>
+                        <input type="tel" id="donorPhone" placeholder="+91 XXXXXXXXXX" class="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:border-gold-500 focus:ring-2 focus:ring-gold-200 transition-all">
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-2">Email Address *</label>
+                    <input type="email" id="donorEmail" placeholder="your@email.com" class="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:border-gold-500 focus:ring-2 focus:ring-gold-200 transition-all">
+                </div>
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-2">PAN Card (for 80G receipt)</label>
+                    <input type="text" id="donorPan" placeholder="ABCDE1234F" maxlength="10" class="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:border-gold-500 focus:ring-2 focus:ring-gold-200 transition-all uppercase">
+                </div>
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-2">Address</label>
+                    <textarea id="donorAddress" rows="2" placeholder="Your full address" class="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:border-gold-500 focus:ring-2 focus:ring-gold-200 transition-all resize-none"></textarea>
+                </div>
+
+                <!-- Payment Mode -->
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-3">Payment Mode</label>
+                    <div class="grid grid-cols-3 gap-3">
+                        <label class="flex items-center gap-2 border border-gray-300 rounded-xl px-3 py-3 cursor-pointer hover:border-gold-500 transition-all">
+                            <input type="radio" name="paymentMode" value="UPI" class="accent-gold-500"> <span class="text-sm font-semibold">UPI</span>
+                        </label>
+                        <label class="flex items-center gap-2 border border-gray-300 rounded-xl px-3 py-3 cursor-pointer hover:border-gold-500 transition-all">
+                            <input type="radio" name="paymentMode" value="Bank Transfer" class="accent-gold-500"> <span class="text-sm font-semibold">Bank</span>
+                        </label>
+                        <label class="flex items-center gap-2 border border-gray-300 rounded-xl px-3 py-3 cursor-pointer hover:border-gold-500 transition-all">
+                            <input type="radio" name="paymentMode" value="Cash" class="accent-gold-500"> <span class="text-sm font-semibold">Cash</span>
+                        </label>
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-2">Transaction ID / Reference</label>
+                    <input type="text" id="transactionId" placeholder="UPI/Bank transaction reference number" class="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:border-gold-500 focus:ring-2 focus:ring-gold-200 transition-all">
+                </div>
+
+                <button onclick="submitDonation()" class="w-full bg-gold-500 hover:bg-gold-600 text-white font-bold py-4 rounded-xl shadow-lg transition-all text-lg mt-2">
+                    🎁 Submit Donation & Get Receipt
+                </button>
+                <p id="formError" class="text-red-500 text-sm hidden"></p>
+            </div>
+        </div>
+
+        <!-- Bank Details & Info -->
+        <div>
+            <h2 class="font-serif text-2xl font-bold text-navy-800 mb-8">Payment Information</h2>
+
+            <!-- UPI / Bank Details (placeholder – replace with real details) -->
+            <div class="bg-navy-50 rounded-2xl p-7 border border-navy-100 mb-6">
+                <h3 class="font-serif text-lg font-bold text-navy-800 mb-4">🏦 Bank Transfer Details</h3>
+                <table class="text-sm text-gray-700 w-full">
+                    <tr><td class="py-2 font-semibold pr-4 text-navy-700">Account Name</td><td>Asharfi Global Educational Trust</td></tr>
+                    <tr><td class="py-2 font-semibold pr-4 text-navy-700">Account No.</td><td class="font-mono">[Your Account Number]</td></tr>
+                    <tr><td class="py-2 font-semibold pr-4 text-navy-700">IFSC Code</td><td class="font-mono">[IFSC Code]</td></tr>
+                    <tr><td class="py-2 font-semibold pr-4 text-navy-700">Bank Name</td><td>[Bank Name, Branch]</td></tr>
+                    <tr><td class="py-2 font-semibold pr-4 text-navy-700">UPI ID</td><td class="font-mono">[upi@bank]</td></tr>
+                </table>
+            </div>
+
+            <div class="bg-gold-50 border border-gold-200 rounded-2xl p-6 mb-6">
+                <h3 class="font-serif text-lg font-bold text-navy-800 mb-3">📋 80G Tax Exemption</h3>
+                <p class="text-gray-600 text-sm leading-relaxed">Donations to AGET are eligible for income tax deduction under Section 80G of the Income Tax Act. Please provide your PAN card number to receive an 80G-compliant receipt.</p>
+            </div>
+
+            <div class="bg-white border border-gray-200 rounded-2xl p-6">
+                <h3 class="font-serif text-lg font-bold text-navy-800 mb-3">📞 Need Help?</h3>
+                <p class="text-gray-600 text-sm mb-3">For any donation-related queries:</p>
+                <p class="text-navy-700 font-semibold">+91 79039 44882</p>
+                <p class="text-navy-700 font-semibold">info@aget.org.in</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Receipt Modal -->
+<div id="receiptModal" class="fixed inset-0 z-50 hidden flex items-center justify-center bg-black bg-opacity-60 p-4">
+    <div class="bg-white rounded-2xl max-w-lg w-full shadow-2xl max-h-screen overflow-y-auto" id="receiptContent">
+        <div class="bg-navy-900 text-white p-6 rounded-t-2xl text-center">
+            <img src="/static/images/logo.png" alt="AGET Logo" class="h-14 mx-auto mb-3 brightness-0 invert">
+            <h2 class="font-serif text-xl font-bold">Asharfi Global Educational Trust</h2>
+            <p class="text-gold-400 text-xs tracking-widest uppercase">Official Donation Receipt</p>
+        </div>
+        <div class="p-6 space-y-3 text-sm" id="receiptDetails"></div>
+        <div class="bg-gray-50 p-5 rounded-b-2xl text-center text-xs text-gray-500 border-t">
+            <p class="font-semibold text-navy-700 mb-1">This is a computer-generated receipt. Valid for 80G tax exemption.</p>
+            <p>Reg. Deed No. 15 | Book No. 4 | Saharsa, Bihar | info@aget.org.in</p>
+            <div class="flex gap-3 justify-center mt-4">
+                <button onclick="window.print()" class="bg-navy-700 text-white px-5 py-2 rounded-lg hover:bg-navy-800 transition-colors text-sm font-semibold">🖨️ Print Receipt</button>
+                <button onclick="closeReceipt()" class="bg-gray-200 text-gray-700 px-5 py-2 rounded-lg hover:bg-gray-300 transition-colors text-sm font-semibold">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+let selectedAmount = 0;
+
+function setAmount(val) {
+    document.querySelectorAll('.amount-btn').forEach(b => b.classList.remove('border-gold-500', 'bg-gold-50'));
+    if (val > 0) {
+        event.target.classList.add('border-gold-500', 'bg-gold-50');
+        selectedAmount = val;
+        document.getElementById('customAmount').value = val;
+    } else {
+        document.getElementById('customAmount').value = '';
+        document.getElementById('customAmount').focus();
+    }
+}
+
+async function submitDonation() {
+    const name = document.getElementById('donorName').value.trim();
+    const email = document.getElementById('donorEmail').value.trim();
+    const phone = document.getElementById('donorPhone').value.trim();
+    const amount = parseInt(document.getElementById('customAmount').value) || selectedAmount;
+    const pan = document.getElementById('donorPan').value.trim().toUpperCase();
+    const address = document.getElementById('donorAddress').value.trim();
+    const purpose = document.getElementById('purpose').value;
+    const paymentMode = document.querySelector('input[name="paymentMode"]:checked')?.value || 'Not specified';
+    const transactionId = document.getElementById('transactionId').value.trim();
+    const errEl = document.getElementById('formError');
+
+    if (!name || !email || !phone || !amount || amount < 1) {
+        errEl.textContent = 'Please fill in Name, Email, Phone, and Amount.';
+        errEl.classList.remove('hidden');
+        return;
+    }
+    errEl.classList.add('hidden');
+
+    const res = await fetch('/api/donate', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({name, email, phone, amount, pan, address, purpose, payment_mode: paymentMode, transaction_id: transactionId})
+    });
+    const data = await res.json();
+    if (data.success) showReceipt(data);
+}
+
+function showReceipt(d) {
+    const rows = [
+        ['Receipt No.', d.receipt_no],
+        ['Date & Time', `${d.date} at ${d.time}`],
+        ['Donor Name', d.name],
+        ['Email', d.email],
+        ['Phone', d.phone],
+        ['PAN Card', d.pan || 'Not provided'],
+        ['Address', d.address || 'Not provided'],
+        ['Donation Amount', `₹${parseInt(d.amount).toLocaleString('en-IN')}/-`],
+        ['Purpose', d.purpose],
+        ['Payment Mode', d.payment_mode],
+        ['Transaction ID', d.transaction_id || 'N/A'],
+    ];
+    let html = `<div class="border-b pb-3 mb-3"><p class="text-green-600 font-bold text-base">✅ ${d.message}</p></div>`;
+    rows.forEach(([k, v]) => {
+        html += `<div class="flex justify-between gap-4 border-b border-gray-100 py-2"><span class="text-gray-500 font-semibold w-36 flex-shrink-0">${k}</span><span class="text-navy-800 font-medium text-right">${v}</span></div>`;
+    });
+    html += `<div class="bg-gold-50 border border-gold-200 rounded-xl p-4 mt-4 text-center"><p class="font-semibold text-navy-800">Thank you for your generous contribution, ${d.name}!</p><p class="text-gray-600 text-xs mt-1">This donation is eligible for 80G tax deduction. Keep this receipt for your records.</p></div>`;
+    document.getElementById('receiptDetails').innerHTML = html;
+    document.getElementById('receiptModal').classList.remove('hidden');
+    document.getElementById('receiptModal').classList.add('flex');
+}
+
+function closeReceipt() {
+    document.getElementById('receiptModal').classList.add('hidden');
+    document.getElementById('receiptModal').classList.remove('flex');
+}
+</script>
+{% endblock %}

@@ -1,0 +1,107 @@
+{% extends "base.html" %}
+
+{% block title %}About Us | Asharfi Global Educational Trust (AGET) | Bihar{% endblock %}
+{% block meta_desc %}Learn about Asharfi Global Educational Trust (AGET) — its history, mission, vision, objectives, and the leadership team driving educational transformation in Bihar.{% endblock %}
+
+{% block content %}
+
+<!-- Page Header -->
+<section class="bg-navy-900 py-20 relative overflow-hidden">
+    <div class="absolute inset-0 hero-pattern opacity-10"></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-4 text-center">
+        <p class="text-gold-400 font-semibold text-sm tracking-widest uppercase mb-3">Our Story</p>
+        <h1 class="font-serif text-4xl lg:text-5xl font-bold text-white mb-4">About AGET</h1>
+        <p class="text-gray-300 max-w-2xl mx-auto">A trust founded on the belief that education is the most powerful tool to change the world.</p>
+    </div>
+</section>
+
+<!-- Mission & Vision -->
+<section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-14 items-center">
+        <div>
+            <p class="text-gold-600 font-semibold text-sm tracking-widest uppercase mb-3">Our Foundation</p>
+            <h2 class="font-serif text-3xl font-bold text-navy-800 mb-6">Mission, Vision & Values</h2>
+
+            <div class="space-y-6">
+                <div class="border-l-4 border-gold-500 pl-5">
+                    <h3 class="font-serif text-xl font-bold text-navy-800 mb-2">🎯 Our Mission</h3>
+                    <p class="text-gray-600 leading-relaxed">To establish, support, and sustain world-class educational institutions, scholarships, and welfare programs that empower every individual — regardless of caste, gender, religion, or economic standing — to achieve their full potential.</p>
+                </div>
+                <div class="border-l-4 border-gold-500 pl-5">
+                    <h3 class="font-serif text-xl font-bold text-navy-800 mb-2">🔭 Our Vision</h3>
+                    <p class="text-gray-600 leading-relaxed">A Bihar — and an India — where no child is denied education due to poverty or circumstance, and where every community has access to knowledge, skills, and opportunity.</p>
+                </div>
+                <div class="border-l-4 border-gold-500 pl-5">
+                    <h3 class="font-serif text-xl font-bold text-navy-800 mb-2">💡 Our Values</h3>
+                    <p class="text-gray-600 leading-relaxed">Transparency, Compassion, Inclusivity, Excellence, and Community. We govern ourselves with complete accountability to our donors, beneficiaries, and society.</p>
+                </div>
+            </div>
+        </div>
+        <div class="bg-navy-50 rounded-2xl p-8 border border-navy-100">
+            <h3 class="font-serif text-2xl font-bold text-navy-800 mb-5">Trust Registration Details</h3>
+            <table class="w-full text-sm text-gray-700">
+                <tbody class="divide-y divide-gray-200">
+                    <tr class="py-3"><td class="py-3 font-semibold text-navy-700 pr-4">Trust Name</td><td class="py-3">Asharfi Global Educational Trust</td></tr>
+                    <tr><td class="py-3 font-semibold text-navy-700 pr-4">Short Name</td><td class="py-3">AGET</td></tr>
+                    <tr><td class="py-3 font-semibold text-navy-700 pr-4">Type</td><td class="py-3">Public Charitable Trust</td></tr>
+                    <tr><td class="py-3 font-semibold text-navy-700 pr-4">Deed No.</td><td class="py-3">15 (Book No. 4, Volume No. 1)</td></tr>
+                    <tr><td class="py-3 font-semibold text-navy-700 pr-4">Registration Date</td><td class="py-3">13 May 2026</td></tr>
+                    <tr><td class="py-3 font-semibold text-navy-700 pr-4">Registering Authority</td><td class="py-3">Dist. Registry Office, Saharsa</td></tr>
+                    <tr><td class="py-3 font-semibold text-navy-700 pr-4">Registered Office</td><td class="py-3">Sattarkatiya, Saharsa, Bihar – 852124</td></tr>
+                    <tr><td class="py-3 font-semibold text-navy-700 pr-4">Tax Benefit</td><td class="py-3">80G Eligible (Income Tax Act)</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+<!-- Objectives Section -->
+<section class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4">
+        <div class="text-center mb-14">
+            <p class="text-gold-600 font-semibold text-sm tracking-widest uppercase mb-2">As Per Trust Deed</p>
+            <h2 class="font-serif text-3xl font-bold text-navy-800">Main Objects of AGET</h2>
+        </div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            {% set objectives = [
+                ('A', 'Educational Institutions', 'To establish, run, support, develop, and maintain schools, colleges, coaching centres for competitive examinations, vocational training institutes, libraries, reading rooms, universities, laboratories, and research institutions for public benefit.'),
+                ('B', 'Scholarships & Stipends', 'To establish and maintain studentships, scholarships, and render other kinds of aid including supply of books, stipends, medals, and incentives to study — without any distention as to caste, color, race, creed, or sex.'),
+                ('C', 'Science, Arts & Culture', 'To promote, establish, support, and maintain institutions for science, literature, music, drama, and fine arts, and to support research institutions in India for the benefit of the general public.'),
+                ('D', 'Sports & Recreation', 'To establish, maintain, or grant aid for parks, gardens, gymnasiums, and sports clubs for the all-round development of students and youth.'),
+                ('E', 'Orphan & Widow Welfare', 'To establish and maintain institutions for educating orphans, widows, aged persons, and the underprivileged, empowering them for a better life and prosperity.'),
+                ('F', 'Special Needs', 'To establish educational institutions for the physically handicapped, disabled, or mentally challenged persons, providing them education, food, clothing, and other assistance.'),
+                ('G', 'Aid to Institutions', 'To grant aid or render assistance to other public educational trusts or institutions and undertake charitable activities solely for education, training, and research.')
+            ] %}
+            {% for letter, title, desc in objectives %}
+            <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+                <div class="flex items-start gap-4">
+                    <span class="flex-shrink-0 w-10 h-10 rounded-full bg-gold-500 text-white font-bold font-serif flex items-center justify-center text-lg">{{letter}}</span>
+                    <div>
+                        <h3 class="font-serif font-bold text-navy-800 mb-2">{{title}}</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">{{desc}}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- Founder Story -->
+<section class="py-20 bg-navy-900 text-white">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+        <p class="text-gold-400 font-semibold text-sm tracking-widest uppercase mb-3">Our Beginning</p>
+        <h2 class="font-serif text-3xl font-bold mb-6">The Story of How AGET Began</h2>
+        <blockquote class="font-serif text-xl lg:text-2xl italic text-gray-200 leading-relaxed mb-8 border-l-4 border-gold-500 pl-6 text-left">
+            "Education is not a privilege reserved for the few. It is the right of every child, every woman, every human being — and it was with this conviction that the Asharfi Global Educational Trust was born."
+        </blockquote>
+        <p class="text-gray-300 leading-relaxed mb-5">
+            The trust was established in 2026 by its Settler, with a heartfelt desire to give back to the communities of Bihar. Growing up witnessing the struggle of talented children who could not access quality education due to financial barriers, the founders resolved to create a permanent institution that would serve generations to come.
+        </p>
+        <p class="text-gray-300 leading-relaxed">
+            Registered with the District Registry Office, Saharsa, AGET began its operations with a clear mandate: to make education accessible, affordable, and transformative for every deserving student across Bihar and India.
+        </p>
+    </div>
+</section>
+
+{% endblock %}
